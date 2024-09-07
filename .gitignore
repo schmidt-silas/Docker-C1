@@ -1,0 +1,9 @@
+# Global
+.env
+
+# Traefik
+/traefik/certs
+/traefik/acme.json
+/traefik/configs/*
+/traefik/logs
+/traefik/traefik.yml
