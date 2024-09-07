@@ -7,3 +7,14 @@
 /traefik/configs/*
 /traefik/logs
 /traefik/traefik.yml
+
+# Authentik
+/authentik/media
+/authentik/certs
+/authentik/custom-templates
+
+# Netbird
+/netbird/docker-compose.yml
+/netbird/management.json
+/netbird/openid-configuration.json
+/netbird/turnserver.conf

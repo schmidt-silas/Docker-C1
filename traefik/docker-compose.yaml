@@ -1,3 +1,5 @@
+---
+
 services:
   traefik:
     image: traefik:latest
@@ -25,13 +27,13 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.${SUB_DOMAIN}.entrypoints=http"
       - "traefik.http.routers.${SUB_DOMAIN}.rule=Host(`${SUB_DOMAIN}.${DOMAIN}`)"
-      - "traefik.http.middlewares.${SUB_DOMAIN}-auth.basicauth.users=${YOUR_USERNAME_PASSWORD}"  # PW Secure
+#      - "traefik.http.middlewares.${SUB_DOMAIN}-auth.basicauth.users=${YOUR_USERNAME_PASSWORD}"  # PW Secure
       - "traefik.http.middlewares.${SUB_DOMAIN}-https-redirect.redirectscheme.scheme=https"
       - "traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https"
       - "traefik.http.routers.${SUB_DOMAIN}.middlewares=${SUB_DOMAIN}-https-redirect"
       - "traefik.http.routers.${SUB_DOMAIN}-secure.entrypoints=https"
       - "traefik.http.routers.${SUB_DOMAIN}-secure.rule=Host(`${SUB_DOMAIN}.${DOMAIN}`)"
-      - "traefik.http.routers.${SUB_DOMAIN}-secure.middlewares=${SUB_DOMAIN}-auth"               # PW Secure
+#      - "traefik.http.routers.${SUB_DOMAIN}-secure.middlewares=${SUB_DOMAIN}-auth"               # PW Secure
       - "traefik.http.routers.${SUB_DOMAIN}-secure.tls=true"
       - "traefik.http.routers.${SUB_DOMAIN}-secure.tls.certresolver=cloudflare"
       - "traefik.http.routers.${SUB_DOMAIN}-secure.tls.domains[0].main=${DOMAIN}"
@@ -43,7 +45,7 @@ services:
       - "traefik.http.routers.${SUB_DOMAIN}-secure.tls.domains[3].main=${DOMAIN_3}"
       - "traefik.http.routers.${SUB_DOMAIN}-secure.tls.domains[3].sans=*.${DOMAIN_3}"
       - "traefik.http.routers.${SUB_DOMAIN}-secure.service=api@internal"
-#      - "traefik.http.routers.${SUB_DOMAIN}-secure.middlewares=authentik@file"       # Authentik Proxy
+      - "traefik.http.routers.${SUB_DOMAIN}-secure.middlewares=authentik@file"       # Authentik Proxy
 
   traefik-certs-dumper:
     container_name: traefik_certs-dumper

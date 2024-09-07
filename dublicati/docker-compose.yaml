@@ -1,3 +1,5 @@
+---
+
 services:
   duplicati:
     image: lscr.io/linuxserver/duplicati:latest
@@ -29,7 +31,7 @@ services:
       - "traefik.http.routers.${SUB_DOMAIN}-secure.service=${SUB_DOMAIN}"
       - "traefik.http.services.${SUB_DOMAIN}.loadbalancer.server.port=8200"
       - "traefik.docker.network=proxy"
-#      - "traefik.http.routers.${SUB_DOMAIN}-secure.middlewares=authentik@file"       # Authentik Proxy
+      - "traefik.http.routers.${SUB_DOMAIN}-secure.middlewares=authentik@file"       # Authentik Proxy
 
 volumes:
   config:
