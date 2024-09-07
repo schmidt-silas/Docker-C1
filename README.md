@@ -1,2 +1,2 @@
 # Docker-C1
-Hetzner Cloud VM
+## Hetzner Cloud VM [CX32]
