@@ -43,8 +43,7 @@ services:
       - "traefik.http.routers.${SUB_DOMAIN}-secure.tls.domains[3].main=${DOMAIN_3}"
       - "traefik.http.routers.${SUB_DOMAIN}-secure.tls.domains[3].sans=*.${DOMAIN_3}"
       - "traefik.http.routers.${SUB_DOMAIN}-secure.service=api@internal"
-#      - "traefik.http.routers.${SUB_DOMAIN}-secure.middlewares=authentik@file"                   # SSO Secure
-# https://github.com/ldez/traefik-certs-dumper?tab=readme-ov-file
+#      - "traefik.http.routers.${SUB_DOMAIN}-secure.middlewares=authentik@file"       # Authentik Proxy
 
   traefik-certs-dumper:
     container_name: traefik_certs-dumper
@@ -60,6 +59,7 @@ services:
     #  --source /data/acme.json --dest /data/certs --crt-ext=.pem --key-ext=.pem --domain-subdir'
     volumes:
       - ./:/data
+# https://github.com/ldez/traefik-certs-dumper?tab=readme-ov-file
 
 networks:
   proxy:
