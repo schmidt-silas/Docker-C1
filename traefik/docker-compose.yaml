@@ -1,5 +1,3 @@
----
-
 services:
   traefik:
     image: traefik:latest
@@ -14,8 +12,8 @@ services:
       - 443:443
     environment:
       - CF_API_EMAIL=${CF_API_EMAIL}
-#      - CF_DNS_API_TOKEN=${CF_DNS_API_TOKEN}
-      - CF_API_KEY=${YOU_API_KEY}
+      - CF_DNS_API_TOKEN=${CF_DNS_API_TOKEN}
+#      - CF_API_KEY=${YOU_API_KEY}
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro

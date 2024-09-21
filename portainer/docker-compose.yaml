@@ -1,5 +1,3 @@
----
-
 services:
   portainer:
     image: portainer/portainer-${VARIANTE}:latest # change -ee to -ce for community edition
