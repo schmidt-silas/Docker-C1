@@ -22,7 +22,7 @@ DNS Record setzen [sub_domain].[domain]
 
 
 ---------------------------------
-### For Authentik
+### For Authentik (can probably be  skiped since it's explained in the new doku form Netbird)
 1. authentik admin interface
 2. left menu --> System --> Brands
 3. edit authentik-default (or custom)
