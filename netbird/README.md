@@ -12,6 +12,14 @@ nano setup.env
 ./configure
 ```
 ### copy artefacts to netbird folder
+
+### make relay use rels istead of rel
+```
+nano management.json
+```
+change `"Addresses": ["rel://<NETBIRD_DOMAIN>:443/relay"],` (in the relay portion of the json file)
+to `"Addresses": ["rels://<NETBIRD_DOMAIN>:443/relay"],`
+
 ### Start Container
 ```
 docker compose up -d
