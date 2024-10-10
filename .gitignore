@@ -18,3 +18,13 @@
 /netbird/management.json
 /netbird/openid-configuration.json
 /netbird/turnserver.conf
+
+# Wallos
+/wallos/volume/*
+
+# Webkram
+/websites
+
+# Uptime
+/uptime-kuma/volumes
+wallos/docker-compose.yaml
